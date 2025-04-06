@@ -1,13 +1,13 @@
 // @ts-check
-import eslint from '@eslint/js';
-import angular from 'angular-eslint';
-import eslintConfigPrettier from 'eslint-config-prettier';
-import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
-import tseslint from 'typescript-eslint';
+import eslint from "@eslint/js";
+import angular from "angular-eslint";
+import eslintConfigPrettier from "eslint-config-prettier";
+import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
+import tseslint from "typescript-eslint";
 
 export default tseslint.config(
   {
-    files: ['**/*.ts'],
+    files: ["**/*.ts"],
     extends: [
       eslint.configs.recommended,
       ...tseslint.configs.recommended,
@@ -16,35 +16,35 @@ export default tseslint.config(
       eslintConfigPrettier,
     ],
     rules: {
-      '@angular-eslint/directive-selector': [
-        'error',
+      "@angular-eslint/directive-selector": [
+        "error",
         {
-          type: 'attribute',
-          prefix: 'app',
-          style: 'camelCase',
+          type: "attribute",
+          prefix: "app",
+          style: "camelCase",
         },
       ],
-      '@angular-eslint/component-selector': [
-        'error',
+      "@angular-eslint/component-selector": [
+        "error",
         {
-          type: 'element',
-          prefix: 'app',
-          style: 'kebab-case',
+          type: "element",
+          prefix: "app",
+          style: "kebab-case",
         },
       ],
-      'prettier/prettier': [
-        'error',
+      "prettier/prettier": [
+        "error",
         {
           semi: true,
           indent: 2,
           singleQuote: false,
-          trailingComma: 'es5',
+          trailingComma: "es5",
         },
       ],
     },
   },
   {
-    files: ['**/*.html'],
+    files: ["**/*.html"],
     extends: [
       ...angular.configs.templateRecommended,
       ...angular.configs.templateAccessibility,
